@@ -111,7 +111,7 @@ A API popula automaticamente os seguintes dados:
 
 ## 2. Clonar o projeto
 ```
-git clone https://github.com/SEU_REPO.git
+https://github.com/Torugo0/FuturoDoTrabalho.Api.git
 ```
 
 ## 3. Abrir a pasta do projeto no Visual Studio
