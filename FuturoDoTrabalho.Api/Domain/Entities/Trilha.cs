@@ -1,4 +1,6 @@
-﻿namespace FuturoDoTrabalho.Api.Domain.Entities
+﻿using System.Collections.Generic;
+
+namespace FuturoDoTrabalho.Api.Domain.Entities
 {
     public class Trilha
     {

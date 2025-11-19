@@ -1,4 +1,5 @@
 ﻿using FuturoDoTrabalho.Api.DTOs;
+using FuturoDoTrabalho.Api.Exceptions;
 using FuturoDoTrabalho.Api.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -68,6 +69,41 @@ namespace FuturoDoTrabalho.Api.Controllers
             if (!deleted) return NotFound();
 
             return NoContent();
+        }
+
+        [HttpGet("{id:long}/trilhas")]
+        public async Task<IActionResult> GetTrilhasDoUsuario(long id)
+        {
+            var trilhas = await _usuarioService.GetTrilhasDoUsuarioAsync(id);
+            return Ok(trilhas);
+        }
+
+        [HttpPost("{usuarioId:long}/trilhas/{trilhaId:long}")]
+        public async Task<IActionResult> Matricular(long usuarioId, long trilhaId)
+        {
+            try
+            {
+                await _usuarioService.MatricularAsync(usuarioId, trilhaId);
+                return NoContent();
+            }
+            catch (DomainException ex)
+            {
+                return BadRequest(new { erro = ex.Message });
+            }
+        }
+
+        [HttpDelete("{usuarioId:long}/trilhas/{trilhaId:long}")]
+        public async Task<IActionResult> RemoverTrilhaDoUsuario(long usuarioId, long trilhaId)
+        {
+            try
+            {
+                await _usuarioService.RemoverTrilhaAsync(usuarioId, trilhaId);
+                return NoContent(); 
+            }
+            catch (DomainException ex)
+            {
+                return BadRequest(new { erro = ex.Message });
+            }
         }
     }
 }

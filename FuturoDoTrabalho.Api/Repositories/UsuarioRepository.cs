@@ -47,5 +47,14 @@ namespace FuturoDoTrabalho.Api.Repositories
             _context.Usuarios.Remove(usuario);
             await _context.SaveChangesAsync();
         }
+        public async Task<IEnumerable<Trilha>> GetTrilhasByUsuarioIdAsync(long usuarioId)
+        {
+            return await _context.Matriculas
+                .Where(m => m.UsuarioId == usuarioId)
+                .Include(m => m.Trilha)
+                .Select(m => m.Trilha)
+                .AsNoTracking()
+                .ToListAsync();
+        }
     }
 }

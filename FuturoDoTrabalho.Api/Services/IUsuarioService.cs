@@ -9,5 +9,8 @@ namespace FuturoDoTrabalho.Api.Services
         Task<UsuarioDto> CreateAsync(UsuarioCreateUpdateDto dto);
         Task<UsuarioDto?> UpdateAsync(long id, UsuarioCreateUpdateDto dto);
         Task<bool> DeleteAsync(long id);
+        Task<IEnumerable<TrilhaDto>> GetTrilhasDoUsuarioAsync(long usuarioId);
+        Task MatricularAsync(long usuarioId, long trilhaId);
+        Task RemoverTrilhaAsync(long usuarioId, long trilhaId);
     }
 }

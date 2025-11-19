@@ -9,5 +9,6 @@ namespace FuturoDoTrabalho.Api.Repositories
         Task<Trilha> AddAsync(Trilha trilha);
         Task UpdateAsync(Trilha trilha);
         Task DeleteAsync(Trilha trilha);
+        Task<IEnumerable<Usuario>> GetUsuariosByTrilhaIdAsync(long trilhaId);
     }
 }

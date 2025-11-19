@@ -69,5 +69,13 @@ namespace FuturoDoTrabalho.Api.Controllers
 
             return NoContent();
         }
+
+        [HttpGet("{id:long}/usuarios")]
+        public async Task<IActionResult> GetUsuariosDaTrilha(long id)
+        {
+            var usuarios = await _trilhaService.GetUsuariosDaTrilhaAsync(id);
+            return Ok(usuarios);
+        }
+
     }
 }

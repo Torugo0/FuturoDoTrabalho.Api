@@ -101,5 +101,18 @@ namespace FuturoDoTrabalho.Api.Services
             await _trilhaRepository.DeleteAsync(trilha);
             return true;
         }
+        public async Task<IEnumerable<UsuarioDto>> GetUsuariosDaTrilhaAsync(long trilhaId)
+        {
+            var usuarios = await _trilhaRepository.GetUsuariosByTrilhaIdAsync(trilhaId);
+            return usuarios.Select(u => new UsuarioDto
+            {
+                Id = u.Id,
+                Nome = u.Nome,
+                Email = u.Email,
+                AreaAtuacao = u.AreaAtuacao,
+                NivelCarreira = u.NivelCarreira
+            });
+        }
+
     }
 }
