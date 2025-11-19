@@ -121,7 +121,7 @@ Na pasta do projeto, clicar duas vezes em FuturoDoTrabalho.Api.slnx
 
 ## 4. Executar o projeto
 ```
-Com a solução aberta, clicar no icone verde com https ao lado
+Com a solução aberta, clicar no icone verde com https ao lado para rodar a API
 ```
 
 ---
@@ -157,11 +157,6 @@ Com a solução aberta, clicar no icone verde com https ao lado
 ---
 
 # 👥 Integrantes
-(Adicionar nomes conforme a turma)
+Gabriel Machado Carrara Pimentel — RM99880 · Lourenzo Ramos — RM99951 · Vitor Hugo Rodrigues — RM97758.
 
 ---
-
-# 📄 Resumo Executivo
-
-> A API implementa uma plataforma completa de Upskilling e Reskilling com arquitetura SOA, CRUDs, relacionamentos N-N, seeds, validações, controle de matrículas e versionamento compatível com o futuro do trabalho 2030. Desenvolvida em C# 10 no Visual Studio 2026, atende integralmente aos requisitos da disciplina.
-
