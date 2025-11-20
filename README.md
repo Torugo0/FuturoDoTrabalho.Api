@@ -33,6 +33,8 @@ A solução implementa:
 
 # 🧱 Arquitetura da Aplicação
 
+![Fluxo de Arquitetura](arquitetura.png)
+![Fluxo de Arquitetura](arquitetura.png)
 ```
 Controllers  →  Services  →  Repositories  →  ApplicationDbContext  →  SQL Server
 ```
